@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boo Burger | Menu & Offers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0a0a0a; color: #fff; }
+        .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+        }
+        .fire-text {
+            background: linear-gradient(to right, #fbbf24, #f60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .price-tag { color: #fbbf24; font-weight: 700; }
+        .menu-item:hover { background-color: #18181b; }
+    </style>
+</head>
+<body class="bg-black">
+
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-3xl">🍔</span>
+                <h1 class="font-display text-3xl text-white tracking-wider">BOO<span class="text-yellow-500">BURGER</span></h1>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-sm font-semibold uppercase">
+                <li><a href="#home" class="hover:text-yellow-500 transition">Home</a></li>
+                <li><a href="#menu" class="hover:text-yellow-500 transition">Menu</a></li>
+                <li><a href="#offers" class="hover:text-yellow-500 transition">Offers</a></li>
+                <li><a href="#locations" class="hover:text-yellow-500 transition">Locations</a></li>
+            </ul>
+            <a href="#menu" class="bg-yellow-500 text-black px-5 py-2 rounded-full font-bold hover:bg-yellow-400 transition text-sm uppercase">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex flex-col justify-center items-center text-center px-4">
+        <p class="text-yellow-500 font-bold uppercase tracking-[0.3em] mb-4">Beirut's Best Burgers & Appetizers</p>
+        <h2 class="font-display text-6xl md:text-8xl text-white mb-4 leading-none">
+            HAPPINESS<br><span class="fire-text">BETWEEN TWO BUNS</span>
+        </h2>
+        <p class="text-lg text-gray-300 max-w-xl mb-8">From juicy burgers to kilos of wings and shrimp, check out our unbeatable offers and menu!</p>
+        <a href="#offers" class="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-400 transition uppercase tracking-wider animate-bounce">View Today's Offers</a>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="py-20 bg-zinc-900">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Limited Time & Bundle Deals</p>
+            <h3 class="font-display text-5xl text-white mb-12">UNBEATABLE <span class="text-yellow-500">OFFERS</span></h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                
+                <!-- Mega Offers -->
+                <div class="bg-gradient-to-br from-yellow-600 to-yellow-900 p-1 rounded-2xl">
+                    <div class="bg-zinc-900 h-full rounded-2xl p-6 flex flex-col justify-between border border-yellow-600/50">
+                        <div>
+                            <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full uppercase">Mega Deal</span>
+                            <h4 class="font-display text-3xl mt-4 text-white">Kilo Shrimps + Kilo Wings</h4>
+                        </div>
+                        <div class="mt-6 text-left space-y-2 text-gray-300">
+                            <p class="flex justify-between border-b border-gray-700 pb-2">Delivery <span class="price-tag text-xl">$28</span></p>
+                            <p class="flex justify-between border-b border-gray-700 pb-2">Dine-In <span class="price-tag text-xl">$30</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standard Offers -->
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">SWISS MUSHROOM OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Burger Combo</p>
+                    </div>
+                    <span class="price-tag text-3xl">$18</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">LEBANESE OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Local Flavor Combo</p>
+                    </div>
+                    <span class="price-tag text-3xl">$15</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">CHEESE OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">For Cheese Lovers</p>
+                    </div>
+                    <span class="price-tag text-3xl">$16</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">BBQ OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Smoky & Grilled</p>
+                    </div>
+                    <span class="price-tag text-3xl">$16</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">AMERICAN OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Classic US Style</p>
+                    </div>
+                    <span class="price-tag text-3xl">$16</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">CHICKEN PATTY OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Crispy Chicken Combo</p>
+                    </div>
+                    <span class="price-tag text-3xl">$18</span>
+                </div>
+
+                <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">SPICY OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Bring the Heat</p>
+                    </div>
+                    <span class="price-tag text-3xl">$18</span>
+                </div>
+
+                <div class="bg-red-900/20 border border-red-700 p-6 rounded-2xl text-left hover:bg-red-900/30 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">JUICES OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Fresh & Refreshing</p>
+                    </div>
+                    <span class="price-tag text-3xl">$16</span>
+                </div>
+
+                <div class="bg-red-900/20 border border-red-700 p-6 rounded-2xl text-left hover:bg-red-900/30 transition duration-300 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-display text-2xl text-white">MISSY OFFER</h4>
+                        <p class="text-gray-500 text-sm uppercase">Special Signature</p>
+                    </div>
+                    <span class="price-tag text-3xl">$18</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Starters & Sides</p>
+                <h3 class="font-display text-5xl text-white">THE <span class="text-yellow-500">MENU</span></h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-2 max-w-4xl mx-auto">
+                
+                <!-- Appetizers -->
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Mix Appetizer</h4>
+                        <p class="text-gray-500 text-sm">The perfect platter to share</p>
+                    </div>
+                    <span class="price-tag text-2xl">$12</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Mozzarella Sticks</h4>
+                        <p class="text-gray-500 text-sm">Golden fried, gooey center</p>
+                    </div>
+                    <span class="price-tag text-2xl">$6</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Cheddar Balls</h4>
+                        <p class="text-gray-500 text-sm">Crispy cheddar bites</p>
+                    </div>
+                    <span class="price-tag text-2xl">$6</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Onion Rings</h4>
+                        <p class="text-gray-500 text-sm">Crispy battered onions</p>
+                    </div>
+                    <span class="price-tag text-2xl">$5</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Curly Fries</h4>
+                        <p class="text-gray-500 text-sm">Seasoned and fried to perfection</p>
+                    </div>
+                    <span class="price-tag text-2xl">$5</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Wedges</h4>
+                        <p class="text-gray-500 text-sm">Thick cut potato wedges</p>
+                    </div>
+                    <span class="price-tag text-2xl">$5</span>
+                </div>
+
+                <!-- Salads -->
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Rocca Salad</h4>
+                        <p class="text-gray-500 text-sm">Fresh arugula and veggies</p>
+                    </div>
+                    <span class="price-tag text-2xl">$6</span>
+                </div>
+
+                <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
+                    <div>
+                        <h4 class="text-xl font-bold text-white">Arabian Salad</h4>
+                        <p class="text-gray-500 text-sm">Traditional Middle Eastern flavor</p>
+                    </div>
+                    <span class="price-tag text-2xl">$5</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-zinc-900">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Come Visit Us</p>
+            <h3 class="font-display text-5xl text-white mb-12">OUR <span class="text-yellow-500">LOCATIONS</span></h3>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Beirut Location -->
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
+                    <h4 class="font-display text-3xl text-yellow-500 mb-4">BEIRUT BRANCH</h4>
+                    <p class="text-gray-400 mb-6">Open daily from 12 PM to 4 AM. Dine-in, Takeaway & Delivery available. Call us at 71 269 566.</p>
+                    <a href="https://share.google/BOHpSH2anP84WEEYa" target="_blank" class="inline-flex items-center space-x-2 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm uppercase hover:bg-yellow-400 transition">
+                        <span>📍</span> Get Directions
+                    </a>
+                </div>
+
+                <!-- Batroun Location -->
+                <div class="bg-black border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
+                    <h4 class="font-display text-3xl text-yellow-500 mb-4">BATROUN BRANCH</h4>
+                    <p class="text-gray-400 mb-6">Enjoy the unique Booburger taste by the beautiful coast of Batroun. Call us at 70 446 044.</p>
+                    <a href="https://share.google/IZHDrQGUrg7UvXscY" target="_blank" class="inline-flex items-center space-x-2 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm uppercase hover:bg-yellow-400 transition">
+                        <span>📍</span> Get Directions
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-display text-5xl text-white mb-4">READY TO ORDER?</h3>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Open daily from 12 PM to 4 AM. Dine-in, Takeaway, and Delivery available. Call us now!</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="tel:71269566" class="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-400 transition uppercase tracking-wider">Call Beirut: 71 269 566</a>
+                <a href="tel:70446044" class="border border-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition uppercase tracking-wider">Call Batroun: 70 446 044</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 py-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <span class="text-2xl">🍔</span>
+                <span class="font-display text-2xl text-white tracking-wider">BOO<span class="text-yellow-500">BURGER</span></span>
+            </div>
+            <div class="flex space-x-6 text-gray-500 text-sm">
+                <p>© 2024 BooBurger Lebanon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
