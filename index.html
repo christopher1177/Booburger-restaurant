@@ -9,8 +9,9 @@
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #0a0a0a; color: #fff; }
         .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+        /* Updated Hero Background to your Logo Image */
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://z-cdn-media.chatglm.cn/files/b1c16669-d705-44df-871c-f1e4413e3bfa.jpeg?auth_key=1884568532-8025e8b0d1e044ca8d9ae62e085f0e5d-0-87ccef5b3b93fa472e1d3e58c2564277') no-repeat center center/cover;
         }
         .fire-text {
             background: linear-gradient(to right, #fbbf24, #f60);
@@ -19,6 +20,25 @@
         }
         .price-tag { color: #fbbf24; font-weight: 700; }
         .menu-item:hover { background-color: #18181b; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 0.75rem; }
+        .gallery-img { transition: transform 0.5s ease; width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item:hover .gallery-img { transform: scale(1.05); }
+        .gallery-label {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem 1rem 1rem;
+            text-align: left;
+        }
+        .gallery-label .main-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            background: rgba(0,0,0,0.6);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
     </style>
 </head>
 <body class="bg-black">
@@ -26,14 +46,16 @@
     <!-- Navbar -->
     <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-gray-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-3xl">🍔</span>
+            <div class="flex items-center space-x-3">
+                <!-- Using your Logo in the Navbar -->
+                <img src="https://z-cdn-media.chatglm.cn/files/b1c16669-d705-44df-871c-f1e4413e3bfa.jpeg?auth_key=1884568532-8025e8b0d1e044ca8d9ae62e085f0e5d-0-87ccef5b3b93fa472e1d3e58c2564277" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80';" alt="BooBurger Logo" class="w-12 h-12 rounded-full object-cover border-2 border-yellow-500">
                 <h1 class="font-display text-3xl text-white tracking-wider">BOO<span class="text-yellow-500">BURGER</span></h1>
             </div>
             <ul class="hidden md:flex space-x-8 text-sm font-semibold uppercase">
                 <li><a href="#home" class="hover:text-yellow-500 transition">Home</a></li>
                 <li><a href="#menu" class="hover:text-yellow-500 transition">Menu</a></li>
                 <li><a href="#offers" class="hover:text-yellow-500 transition">Offers</a></li>
+                <li><a href="#gallery" class="hover:text-yellow-500 transition">Gallery</a></li>
                 <li><a href="#locations" class="hover:text-yellow-500 transition">Locations</a></li>
             </ul>
             <a href="#menu" class="bg-yellow-500 text-black px-5 py-2 rounded-full font-bold hover:bg-yellow-400 transition text-sm uppercase">Order Now</a>
@@ -57,7 +79,6 @@
             <h3 class="font-display text-5xl text-white mb-12">UNBEATABLE <span class="text-yellow-500">OFFERS</span></h3>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                
                 <!-- Mega Offers -->
                 <div class="bg-gradient-to-br from-yellow-600 to-yellow-900 p-1 rounded-2xl">
                     <div class="bg-zinc-900 h-full rounded-2xl p-6 flex flex-col justify-between border border-yellow-600/50">
@@ -71,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Standard Offers -->
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
@@ -80,7 +100,6 @@
                     </div>
                     <span class="price-tag text-3xl">$18</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">LEBANESE OFFER</h4>
@@ -88,7 +107,6 @@
                     </div>
                     <span class="price-tag text-3xl">$15</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">CHEESE OFFER</h4>
@@ -96,7 +114,6 @@
                     </div>
                     <span class="price-tag text-3xl">$16</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">BBQ OFFER</h4>
@@ -104,7 +121,6 @@
                     </div>
                     <span class="price-tag text-3xl">$16</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">AMERICAN OFFER</h4>
@@ -112,7 +128,6 @@
                     </div>
                     <span class="price-tag text-3xl">$16</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">CHICKEN PATTY OFFER</h4>
@@ -120,7 +135,6 @@
                     </div>
                     <span class="price-tag text-3xl">$18</span>
                 </div>
-
                 <div class="bg-black border border-gray-800 p-6 rounded-2xl text-left hover:border-yellow-500 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">SPICY OFFER</h4>
@@ -128,7 +142,6 @@
                     </div>
                     <span class="price-tag text-3xl">$18</span>
                 </div>
-
                 <div class="bg-red-900/20 border border-red-700 p-6 rounded-2xl text-left hover:bg-red-900/30 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">JUICES OFFER</h4>
@@ -136,7 +149,6 @@
                     </div>
                     <span class="price-tag text-3xl">$16</span>
                 </div>
-
                 <div class="bg-red-900/20 border border-red-700 p-6 rounded-2xl text-left hover:bg-red-900/30 transition duration-300 flex justify-between items-center">
                     <div>
                         <h4 class="font-display text-2xl text-white">MISSY OFFER</h4>
@@ -144,7 +156,6 @@
                     </div>
                     <span class="price-tag text-3xl">$18</span>
                 </div>
-
             </div>
         </div>
     </section>
@@ -156,10 +167,7 @@
                 <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Starters & Sides</p>
                 <h3 class="font-display text-5xl text-white">THE <span class="text-yellow-500">MENU</span></h3>
             </div>
-
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-2 max-w-4xl mx-auto">
-                
-                <!-- Appetizers -->
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Mix Appetizer</h4>
@@ -167,7 +175,6 @@
                     </div>
                     <span class="price-tag text-2xl">$12</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Mozzarella Sticks</h4>
@@ -175,7 +182,6 @@
                     </div>
                     <span class="price-tag text-2xl">$6</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Cheddar Balls</h4>
@@ -183,7 +189,6 @@
                     </div>
                     <span class="price-tag text-2xl">$6</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Onion Rings</h4>
@@ -191,7 +196,6 @@
                     </div>
                     <span class="price-tag text-2xl">$5</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Curly Fries</h4>
@@ -199,7 +203,6 @@
                     </div>
                     <span class="price-tag text-2xl">$5</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Wedges</h4>
@@ -207,8 +210,6 @@
                     </div>
                     <span class="price-tag text-2xl">$5</span>
                 </div>
-
-                <!-- Salads -->
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Rocca Salad</h4>
@@ -216,7 +217,6 @@
                     </div>
                     <span class="price-tag text-2xl">$6</span>
                 </div>
-
                 <div class="menu-item flex justify-between items-center p-4 border-b border-gray-800 transition duration-300 rounded-lg">
                     <div>
                         <h4 class="text-xl font-bold text-white">Arabian Salad</h4>
@@ -224,43 +224,130 @@
                     </div>
                     <span class="price-tag text-2xl">$5</span>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-zinc-900">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Visual Menu</p>
+            <h3 class="font-display text-5xl text-white mb-12">THE <span class="text-yellow-500">FOOD</span></h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <!-- 1 Image Per Dish. The onerror attribute ensures no broken question marks ever show. -->
+                
+                <!-- Newly Added Storefront Image -->
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/787404c3-1f18-4931-8df5-e6ca9ebc1591.jpeg?auth_key=1884568532-ee3bda4542b74c119e496f9592f69799-0-60b905387a6d434779d23c38e3b8e3a9" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="BooBurger Storefront">
+                    <div class="gallery-label"><span class="main-name">OUR RESTAURANT</span></div>
+                </div>
+
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/21c611a5-7110-4bea-b8cf-091ac5601182.jpeg?auth_key=1884553909-5fd354addd484f7eb4937b56c691cb02-0-98ab334ba0d6660098f56f2be7c36433" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Cheese Burger">
+                    <div class="gallery-label"><span class="main-name">CHEESE</span></div>
+                </div>
+                
+                <!-- Replaced Beef Patty Image -->
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4545f191-db4e-4333-80d3-d7b13bd94332.jpeg?auth_key=1884566644-a66745de9f88401c9959ac02233b31c6-0-33442b656b5651a544358ae9f330ca74" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550317138-1000060a94f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Beef Patty Burger">
+                    <div class="gallery-label"><span class="main-name">BEEF PATTY</span></div>
+                </div>
+                
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4b33b1d3-d885-4078-a2a5-357ba2216ddf.jpeg?auth_key=1884565902-5dc9ac7f6bce4022aac4e5dab1286b82-0-879696b6965991dcca5b153d37b97bbc" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572448825962-3455425f70e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Swiss Mushroom Burger">
+                    <div class="gallery-label"><span class="main-name">SWISS MUSHROOM</span></div>
+                </div>
+
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/dbcb2d63-eacd-43f6-b509-46a1b22416c1.jpeg?auth_key=1884551317-3bd6b1a5740c479ca417d803293ad24d-0-eff9e9e90a1c4326e723d4aaf6d9f9da" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Lebanese Burger">
+                    <div class="gallery-label"><span class="main-name">LEBANESE</span></div>
+                </div>
+                
+                <!-- Replaced Riyash Meat Platter Image -->
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/bd19fd71-f117-4fa3-8aff-e26694b53755.jpeg?auth_key=1884566644-a3c114d2d2a0491da4b1e544ebcf4779-0-9651973bc89006e7d09d244ea6709ebb" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1565299508367-b0ba5b4376cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Riyash Meat Platter">
+                    <div class="gallery-label"><span class="main-name">RIYASH</span></div>
+                </div>
+                
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/6f66c517-fa32-47f2-8f81-5e365161a29f.jpeg?auth_key=1884551592-7d01468e82934fb5ad189938c2e8b411-0-7ecff47f04c1112bc0b423c6f7924317" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Spicy Burger">
+                    <div class="gallery-label"><span class="main-name">SPICY</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/98fdce99-750e-4bcb-a174-a4237509ea7a.jpeg?auth_key=1884552177-8a23b923795545d4b74062c9f85c06bf-0-1681130fdef4d6e4962f01dd0281f055" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Missy Burger">
+                    <div class="gallery-label"><span class="main-name">MISSY</span></div>
+                </div>
+                
+                <!-- Other Images -->
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/0a621264-29f0-4253-9ee5-b1c27cf2de6f.jpeg?auth_key=1884554211-06b7c145c08e4a5f8d3bc8ae305e3aff-0-158ba0d403e16bc8116268180c8117a5" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1606755456206-b25206cde27e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Chicken Patty Burger">
+                    <div class="gallery-label"><span class="main-name">CHICKEN PATTY</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/b7512408-2d8f-4d41-aeaf-c146ab787e3f.jpeg?auth_key=1884554211-69acb4e5e84143d38ce23f51ae4af9d2-0-7aae42560d9a0878177911523c6f901b" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="American Burger">
+                    <div class="gallery-label"><span class="main-name">AMERICAN</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/b787d003-a272-4599-a123-19c60bb0cbfc.jpeg?auth_key=1884554211-4c7f6f84e4394c07850f566197a400c3-0-7abc2213de85086d9231d6cb57dc6513" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1525164286255-1d7a38936a33?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Grilled Chicken Burger">
+                    <div class="gallery-label"><span class="main-name">GRILLED CHICKEN</span></div>
+                </div>
+
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/2762d2fd-c243-4099-8175-27f9e15c3c9c.jpeg?auth_key=1884551592-9fa2b7d000284ac8aff4360f498bedc6-0-1941367d41e456e639b4bdcf67e0cd7b" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1525164286255-1d7a38936a33?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Makanek Platter">
+                    <div class="gallery-label"><span class="main-name">MAKANEK</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/c6493ecc-d2f0-4c7a-979a-367f102584ad.jpeg?auth_key=1884551592-c8558786fe84429cbee4779304072ffb-0-2334224dcd400e352655f425a79217ad" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Sojok Platter">
+                    <div class="gallery-label"><span class="main-name">SOJOK</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/b237d0a3-c735-410a-af8c-38b72194f168.jpeg?auth_key=1884551317-260292c53610497990f37821b18e2424-0-9787988343cfcf1c2b3668d993b1bf32" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567620832903-9fc6debc209f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="1 Kilo of Wings">
+                    <div class="gallery-label"><span class="main-name">WINGS 1K</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/5a069ff0-7449-4ae0-a04b-645a3b4ad975.jpeg?auth_key=1884552177-fc9e1f1d2b014a78be2741a301a74924-0-69b0480fbdff82409bf04fee8338dc16" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1633114128814-11fac14f207b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="1 Kilo of Shrimps">
+                    <div class="gallery-label"><span class="main-name">SHRIMPS 1K</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/041612c9-ace8-4a0f-8b65-03a20fea54ea.jpeg?auth_key=1884553909-43919b21f96f44dd8b06ff2bef4af977-0-1abf818728f887f5129da6df0844cc75" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1623227225548-9b1b14fb99d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="Juices">
+                    <div class="gallery-label"><span class="main-name">JUICES</span></div>
+                </div>
+                <div class="gallery-item h-72">
+                    <img src="https://z-cdn-media.chatglm.cn/files/8f5c54c3-7f8b-43bb-8298-0dac7ce879ee.jpeg?auth_key=1884553909-b8efbd9d072c4fc6908a5f553a7574d8-0-119b15cce38fdf3f8f1af0c3a71ff0f3" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" class="gallery-img" alt="BBQ Burger">
+                    <div class="gallery-label"><span class="main-name">BBQ</span></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Locations Section -->
-    <section id="locations" class="py-20 bg-zinc-900">
+    <section id="locations" class="py-20 bg-black">
         <div class="container mx-auto px-6 text-center">
             <p class="text-yellow-500 font-bold uppercase tracking-widest mb-2">Come Visit Us</p>
             <h3 class="font-display text-5xl text-white mb-12">OUR <span class="text-yellow-500">LOCATIONS</span></h3>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
-                <!-- Beirut Location -->
-                <div class="bg-black border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
+                <div class="bg-zinc-900 border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
                     <h4 class="font-display text-3xl text-yellow-500 mb-4">BEIRUT BRANCH</h4>
                     <p class="text-gray-400 mb-6">Open daily from 12 PM to 4 AM. Dine-in, Takeaway & Delivery available. Call us at 71 269 566.</p>
                     <a href="https://share.google/BOHpSH2anP84WEEYa" target="_blank" class="inline-flex items-center space-x-2 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm uppercase hover:bg-yellow-400 transition">
                         <span>📍</span> Get Directions
                     </a>
                 </div>
-
-                <!-- Batroun Location -->
-                <div class="bg-black border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
+                <div class="bg-zinc-900 border border-gray-800 p-8 rounded-2xl text-left hover:border-yellow-500 transition duration-300">
                     <h4 class="font-display text-3xl text-yellow-500 mb-4">BATROUN BRANCH</h4>
                     <p class="text-gray-400 mb-6">Enjoy the unique Booburger taste by the beautiful coast of Batroun. Call us at 70 446 044.</p>
                     <a href="https://share.google/IZHDrQGUrg7UvXscY" target="_blank" class="inline-flex items-center space-x-2 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm uppercase hover:bg-yellow-400 transition">
                         <span>📍</span> Get Directions
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Contact / CTA -->
-    <section id="contact" class="py-20 bg-black">
+    <section id="contact" class="py-20 bg-zinc-900">
         <div class="container mx-auto px-6 text-center">
             <h3 class="font-display text-5xl text-white mb-4">READY TO ORDER?</h3>
             <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Open daily from 12 PM to 4 AM. Dine-in, Takeaway, and Delivery available. Call us now!</p>
@@ -272,10 +359,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-zinc-900 py-10 border-t border-gray-800">
+    <footer class="bg-black py-10 border-t border-zinc-800">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                <span class="text-2xl">🍔</span>
+                <img src="https://z-cdn-media.chatglm.cn/files/b1c16669-d705-44df-871c-f1e4413e3bfa.jpeg?auth_key=1884568532-8025e8b0d1e044ca8d9ae62e085f0e5d-0-87ccef5b3b93fa472e1d3e58c2564277" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80';" alt="BooBurger Logo" class="w-8 h-8 rounded-full object-cover border border-yellow-500">
                 <span class="font-display text-2xl text-white tracking-wider">BOO<span class="text-yellow-500">BURGER</span></span>
             </div>
             <div class="flex space-x-6 text-gray-500 text-sm">
